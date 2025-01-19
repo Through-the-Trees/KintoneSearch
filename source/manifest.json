@@ -21,7 +21,7 @@
     "config": {
     "html": "html/config.html",
     "js": [
-      "js/kintone-config-helper.js",
+      "lib/kintone-config-helper.js",
       "js/config.js"
     ],
     "css": [
