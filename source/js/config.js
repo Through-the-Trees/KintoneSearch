@@ -16,7 +16,7 @@
     let options = [];
     // get fields that are single line text and number
     const fields =
-      await KintoneConfigHelper.getFields();
+      await KintoneConfigHelper.fetchAllFields();
     fields.forEach((field) => {
       const option = document.createElement('option');
       option.value = field.code;
@@ -33,8 +33,8 @@
   // create the drop-down list
   const selectBoxOptions = await createOptions();
   selectBoxOptions.forEach((originalOption) => {
-    const telSelectBoxOption = originalOption.cloneNode(true);
-    telFormData.appendChild(telSelectBoxOption);
+    const selectBoxOption = originalOption.cloneNode(true);
+    telFormData.appendChild(selectBoxOption);
   });
 
   // get configuration settings
