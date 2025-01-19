@@ -12,8 +12,30 @@
       .replace(/\n/g, '&#xA;');
   };
 
+  const createOptions = async () => {
+    let options = [];
+    // get fields that are single line text and number
+    const fields =
+      await KintoneConfigHelper.getFields();
+    fields.forEach((field) => {
+      const option = document.createElement('option');
+      option.value = field.code;
+      option.textContent = field.label;
+      options = options.concat(option);
+    });
+    return options;
+  };
+
   // get form information
   const searchFieldsFormData = document.getElementById('search-fields');
+
+  // modify form to display all fields
+  // create the drop-down list
+  const selectBoxOptions = await createOptions();
+  selectBoxOptions.forEach((originalOption) => {
+    const telSelectBoxOption = originalOption.cloneNode(true);
+    telFormData.appendChild(telSelectBoxOption);
+  });
 
   // get configuration settings
   const config = kintone.plugin.app.getConfig(PLUGIN_ID);
