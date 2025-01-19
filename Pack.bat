@@ -1,1 +1,1 @@
-kintone-plugin-packer src
+kintone-plugin-packer source
