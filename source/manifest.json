@@ -6,7 +6,7 @@
       "en": "Custom Search Plugin"
     },
     "description": {
-      "en": "Adds a custom search bar to kintone apps that utilized custom sql queries to simplify searches"
+      "en": "Adds a custom search bar to kintone apps that utilizes custom sql queries to simplify searches"
     },
     "icon": "image/check.png",
     "homepage_url": {
