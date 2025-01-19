@@ -16,8 +16,9 @@
     let options = [];
     // get fields that are single line text and number
     const fields =
-      await KintoneConfigHelper.fetchAllFields();
+      await KintoneConfigHelper.getFields();
     fields.forEach((field) => {
+      if (field.label == '' || field.label == null) return;
       const option = document.createElement('option');
       option.value = field.code;
       option.textContent = field.label;
@@ -34,14 +35,17 @@
   const selectBoxOptions = await createOptions();
   selectBoxOptions.forEach((originalOption) => {
     const selectBoxOption = originalOption.cloneNode(true);
-    telFormData.appendChild(selectBoxOption);
+    searchFieldsFormData.appendChild(selectBoxOption);
   });
 
   // get configuration settings
   const config = kintone.plugin.app.getConfig(PLUGIN_ID);
 
-  // set initial value
+  // set initial/previously set value
   searchFieldsFormData.value = config.searchFields || '';
+
+  // Leave settings form hidden until values are populated
+  document.getElementById('plugin-settings-form').hidden = false;
 
   // get app id
   const appId = kintone.app.getId();

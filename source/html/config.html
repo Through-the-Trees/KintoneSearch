@@ -3,13 +3,13 @@
         <button type="button" id="submit" class="kintoneplugin-button-dialog-ok">save</button>
         <button type="button" id="cancel" class="kintoneplugin-button-dialog-cancel">cancel</button>
     </div>
-    <div class="setting">
+    <div class="setting" id="plugin-settings-form" hidden>
         <label class="kintoneplugin-label" for="search-fields">
             <span>Custom Search Settings</span>
             <span class="kintoneplugin-require">*</span>
         </label>
         <div class="kintoneplugin-row">Select Fields for Search</div>
-        <div class="kintoneplugin-select-outer">
+        <div class="kintoneplugin-select-outer" id="search-fields-dropdown">
             <div class="kintoneplugin-select">
                 <select id="search-fields" name="search-fields" type="text">
                     <option value="">-----</option>
