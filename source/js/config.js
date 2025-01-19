@@ -33,11 +33,6 @@
       alert('Required value is missing.');
       return;
     }
-    // duplicated values check
-    if (new Set([searchFields]).size < 2) {
-      alert('Duplicate values.');
-      return;
-    }
     // save plugin configuration settings
     const newConfig = {searchFields};
     kintone.plugin.app.setConfig(newConfig, () => {
