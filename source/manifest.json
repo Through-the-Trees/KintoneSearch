@@ -1,6 +1,6 @@
 {
     "manifest_version": 1,
-    "version": "0.0.0",
+    "version": "0.0.1",
     "type": "APP",
     "name": {
       "en": "Custom Search Plugin (IN DEVELOPMENT)"
@@ -14,6 +14,7 @@
     },
     "desktop": {
       "js": [
+        "lib/kuc.min.js",
         "js/desktop.js"
       ]
     },
