@@ -15,7 +15,6 @@
     "desktop": {
       "js": [
         "lib/kuc.min.js",
-        "lib/vue.global.min.js",
         "js/desktop.js"
       ]
     },
